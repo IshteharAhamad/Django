@@ -1,0 +1,15 @@
+body{
+    background-color:slategrey;
+    margin:auto;
+   
+}
+h1{
+    font-size: 17px;
+    font-weight: bold;
+    font-family: Arial;
+    text-align: center;
+}
+img{
+    image-resolution: auto;
+    image-orientation: landscape;
+}

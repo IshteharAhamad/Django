@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <title>{{nm}}</title>
+</head>
+<body>
+    <h1>{{value}}</h1>
+    <!--<img src="{% static '/image/pic.jpg' %}" alt="khan"/>-->
+    <img src="{% static 'image/pic.jpg' %}" alt="khan"/><hr>
+    <form action="">
+        <input type="button" value="click Here!" onClick="demo()"/>
+    </form>
+    <script src="{% static 'js/demo.js' %}" ></script>
+    
+</body>
+</html>

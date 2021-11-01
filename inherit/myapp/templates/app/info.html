@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% load static %} {{ block.super }}
+ {% block corecss %}
+<link rel="stylesheet" href="{% static 'css/style.css'  %}"/>
+
+{% endblock corecss %} 
+{% block title %} contact {% endblock title %} 
+{% block content1 %}
+<h2>this is my contact page</h2>
+{% endblock content1 %} {% block content %}
+<h1>this is my first contact using inheritance</h1>
+{% endblock content %}

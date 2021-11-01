@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from project import views
+from payment import views as pt
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,5 +24,6 @@ urlpatterns = [
     path('',views.homepage),
     path('course', views.course),
     path('course/<course_id>', views.course_detail),
+    path('payment/', pt.khan)
     #path('course/<str or slug or int or default:course_id>', views.course_detail)
 ]
