@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>looping all field</title>
+</head>
+<body>
+<form action="" method='POST'>
+ {% csrf_token %} 
+<div class="text-center">
+<center>
+<h3> visible input </h3>
+    {% for field in form.visible_fields %}
+    {{field.label}}<br>
+    {{field}}<br><!-- only show the field on user site -->
+    
+    {% endfor %}<br>
+    <h1>Hidden input ...</h1>
+    {% for hidden in form.hidden_fields %}
+    {{hidden}}
+    {% endfor %}
+    <input type='submit' value='submit'>
+    </center>
+    </div>
+    </form>
+</body>
+</html>

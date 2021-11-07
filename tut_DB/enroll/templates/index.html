@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>details</title>
+    <style>
+    th , td{
+        border:1px solid;
+        cellPadding:0px;
+        cellspacing:0px;
+    }
+    </style>
+</head>
+<body>
+    {% if st %}
+    <table >
+    <tr style="border:1px solid;" cellPadding='0'
+        cellspacing='0'>
+    <th>Student_ID</th>
+    <th>Roll No.</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Mobile No.</th>
+    <th>Course</th>
+    </tr>
+    {% for s in st %}
+    <tr>
+    <td>{{s.s_id}} </td> 
+    <td>{{s.roll_No}} </td>
+    <td>{{s.name}} </td>
+    <td>{{s.email}} </td>
+    <td>{{s.mobile}} </td>
+    <td>{{s.course}} </td>
+    </tr>   
+    {% endfor %}  
+    </table>
+    {% else %}
+    <h3> No Data found ..</h3>
+    {% endif %}
+</body>
+</html>

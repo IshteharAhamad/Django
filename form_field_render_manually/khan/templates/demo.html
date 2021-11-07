@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>details</title>
+</head>
+<body>
+    {{form.as_p}}
+    <input type="button" value="submit">
+    <div>
+    {{form.first_name}}<br>
+    {{form.first_name.value}}<br>
+    {{form.first_name.label_tag}}<br>
+    {{form.first_name.help_text}}<br>
+    </div>
+</body>
+</html>
