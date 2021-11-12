@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+
+<div class="col-md-4">
+<h4 class="text-center alert-info">Add New User </h4>
+<form action="" method="POST">
+{% csrf_token %}
+{{form.as_p}}
+<input type="submit" class="btn btn-success" value="Add" >
+</form>
+
+</div>
+<div class="col-md-7 offset-1">
+<h4 class="text-center alert-info"> Show Information Here  </h4>
+{% if show %}
+<table class="table-hover table table-secondary ">
+  <thead class="table table-success table-striped">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">User Name</th>
+      <th scope="col">Email Id</th>
+      <th scope="col">Password</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for st in show %}
+    <tr>
+      <th scope="row">{{st.Id}}</th>
+      <td>{{st.Name}}</td>
+      <td>{{st.Email}}</td>
+      <td>{{st.Password}}</td>
+      <td>
+      <a href="{% url 'update' st.Id %}" class="btn btn-warning btn-sm">Edit</a>
+      <form action="{% url 'delete' st.Id %}" method="POST" class="d-inline">
+      {% csrf_token %}
+      <input type="submit" class="btn btn-danger" value="Delete">
+      
+      </form>
+      
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<h4 class="text-center alert-warning"> No Record Found..</h4>
+{% endif %}
+</div>
+</div>
+
+{% endblock content %}
+
