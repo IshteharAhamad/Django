@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marina Beach Hotel</title>
+
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"> -->
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'hotel/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <!-- <link href="{% static 'hotel/css/mdb.min.css' %}" rel="stylesheet"> -->
+    <!-- Your custom styles (optional) -->
+    <!-- <link href="{% static 'hotel/css/style.css' %}" rel="stylesheet"> -->
+    <link rel="stylesheet" href="{% static 'hotel/css/marina_beach_landing.css' %}"/>
+  </head>
+  <body>
+      <div class="nav">
+        <h3 id="logo">Marina Beach</h3>
+        <!-- <ul class="navlist">
+          <a href="/marina_beach_amenties.html">Amenties</a>
+        </ul> -->
+      </div>
+    
+    <div
+      class="d-flex flex-column align-items-center justify-content-center check_availability"
+    >
+    
+      <div class="headings m-4">
+        <h1>Marina Beach</h1>
+        <h1>Hotel</h1>
+      </div>
+
+      <div id="search-bar" style="color: #fff;">
+          <form method="POST"
+          class="search-form m-0 container"
+          action=""
+        >
+        {% csrf_token %}
+
+
+        
+        <div class="date-row row">
+
+          <div
+            class="form-group d-flex justify-content-space-between col-sm-6 "
+          >
+          {{form.check_in.errors}}
+            <label class="mr-2" for="{{form.check_in.id_for_label}}">From:</label>
+            {{form.check_in}}
+          </div>
+
+          <div class="form-group d-flex justify-content-space-around  col-sm-6 ">
+            {{form.check_out.errors}}
+            <label for="{{form.check_out.id_for_label}}">To: </label>
+            {{form.check_out}}
+          </div>
+        </div>
+          
+        <div class="room-row row">
+          {{form.room_category.errors}}
+          <label for="{{form.room_category.id_for_label}}">Room Category ::</label>
+          {{form.room_category}}
+        </div>
+          <div class="form-group row mw-50 m-2">
+            <button class="btn btn-primary col-12  mw-50 " type="submit">
+              Find Room
+            </button>
+          </div>
+          </form>
+
+        
+      </div>
+          
+        <!-- <img id="search-bar-img" src="./static/svg/search_bar.svg" alt="" /> -->
+      </div>
+    </div>
+     <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <!-- <script type="text/javascript" src="{% static 'hotel/js/jquery.min.js' %}"></script> -->
+  <!-- Bootstrap tooltips -->
+  <!-- <script type="text/javascript" src="{% static 'hotel/js/popper.min.js' %}"></script> -->
+  <!-- Bootstrap core JavaScript -->
+  <!-- <script type="text/javascript" src="{% static 'hotel/js/bootstrap.min.js' %}"></script> -->
+  <!-- MDB core JavaScript -->
+  <!-- <script type="text/javascript" src="{% static 'hotel/js/mdb.min.js' %}"></script> -->
+
+  </body>
+</html>
